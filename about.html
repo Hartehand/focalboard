@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns | Neue Heizung GmbH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #d85c27;
+            --color-primary-dark: #b3471c;
+            --color-secondary: #0f172a;
+            --color-accent: #f3f4f6;
+            --color-background: #ffffff;
+            --color-text: #1f2937;
+            --color-muted: #64748b;
+            --radius-base: 12px;
+            --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(216, 92, 39, 0.95), rgba(15, 23, 42, 0.95));
+            color: #fff;
+        }
+
+        .wrapper {
+            width: min(1200px, 90vw);
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+        }
+
+        nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        nav .logo span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.16);
+            border-radius: 10px;
+            font-size: 1.25rem;
+        }
+
+        nav .links {
+            display: flex;
+            gap: 1.75rem;
+        }
+
+        nav .links a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        nav .links a:hover {
+            opacity: 0.7;
+        }
+
+        .hero {
+            display: grid;
+            gap: 2.5rem;
+            padding: 4rem 0 5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            margin: 0 0 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin: 0 0 2rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .hero .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.85rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.18);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 40px rgba(255, 255, 255, 0.25);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .metric {
+            background: rgba(15, 23, 42, 0.4);
+            padding: 1.5rem;
+            border-radius: var(--radius-base);
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .metric strong {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        main section {
+            padding: clamp(3rem, 6vw, 5rem) 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--color-accent);
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: clamp(1.9rem, 3vw, 2.6rem);
+        }
+
+        .section-heading p {
+            margin: 0;
+            color: var(--color-muted);
+            max-width: 580px;
+        }
+
+        .values-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .card {
+            background: var(--color-background);
+            border-radius: var(--radius-base);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .card h3 {
+            margin: 0 0 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--color-muted);
+        }
+
+        .story {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            align-items: start;
+        }
+
+        .story img {
+            width: 100%;
+            border-radius: var(--radius-base);
+            box-shadow: var(--shadow-soft);
+            object-fit: cover;
+            min-height: 320px;
+        }
+
+        .story p {
+            color: var(--color-muted);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid rgba(15, 23, 42, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: -0.73rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, rgba(216, 92, 39, 0.2), rgba(15, 23, 42, 0));
+        }
+
+        .timeline-entry {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-entry::before {
+            content: "";
+            position: absolute;
+            left: -2.1rem;
+            top: 0.35rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            box-shadow: 0 0 0 6px rgba(216, 92, 39, 0.12);
+        }
+
+        .timeline-entry h4 {
+            margin: 0 0 0.3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .timeline-entry span {
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-muted);
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-radius: var(--radius-base);
+            background: #fff;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            margin-top: 1rem;
+        }
+
+        .pill {
+            padding: 0.45rem 1rem;
+            border-radius: 999px;
+            background: rgba(216, 92, 39, 0.12);
+            color: var(--color-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .cta-panel {
+            background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(216, 92, 39, 0.92));
+            border-radius: calc(var(--radius-base) * 1.2);
+            padding: clamp(2.5rem, 4vw, 3.5rem);
+            color: #fff;
+            box-shadow: var(--shadow-soft);
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            align-items: center;
+        }
+
+        .cta-panel h3 {
+            margin: 0 0 0.75rem;
+            font-size: clamp(1.6rem, 2.7vw, 2.1rem);
+        }
+
+        .cta-panel p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            font: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(216, 92, 39, 0.2);
+            outline: none;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        footer {
+            background: var(--color-secondary);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        footer h4 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(216, 92, 39, 0.16);
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .grid-two {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .list li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .list span {
+            display: inline-flex;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-top: 0.35rem;
+            background: var(--color-primary);
+        }
+
+        @media (max-width: 720px) {
+            nav .links {
+                display: none;
+            }
+
+            .cta-panel {
+                text-align: center;
+            }
+
+            .cta-panel form {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <nav>
+                <a class="logo" href="#">
+                    <span>NH</span>
+                    Neue Heizung GmbH
+                </a>
+                <div class="links">
+                    <a href="#mission">Mission</a>
+                    <a href="#leistungen">Leistungen</a>
+                    <a href="#team">Team</a>
+                    <a href="#kontakt">Kontakt</a>
+                </div>
+            </nav>
+            <div class="hero">
+                <div>
+                    <div class="badge">Wärme, die Zukunft möglich macht</div>
+                    <h1>Neue Wärme für morgen – innovativ, effizient und nah am Menschen.</h1>
+                    <p>Als mittelständischer Heizungsbauer verbinden wir traditionelle Handwerkskunst mit digitaler Beratungskompetenz. Wir begleiten Eigenheime, Unternehmen und Bauträger auf dem Weg zur klimaneutralen Wärmeversorgung.</p>
+                    <div class="cta-group">
+                        <a class="btn btn-primary" href="#kontakt">Projekt starten</a>
+                        <a class="btn btn-secondary" href="#werte">Unsere Werte</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="metrics">
+                        <div class="metric">
+                            <strong>1.200+</strong>
+                            <span>Installierte Heizsysteme in Sachsen</span>
+                        </div>
+                        <div class="metric">
+                            <strong>48 h</strong>
+                            <span>Service-Reaktionszeit für Bestandskunden</span>
+                        </div>
+                        <div class="metric">
+                            <strong>35 %</strong>
+                            <span>Durchschnittliche Energieeinsparung bei Modernisierungen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="mission">
+            <div class="wrapper">
+                <div class="section-heading">
+                    <div>
+                        <h2>Unsere Mission: Wärme neu denken</h2>
+                        <p>Die Energiewende gelingt nur, wenn nachhaltige Technik verständlich, bezahlbar und zuverlässig verfügbar ist. Dafür bringen wir Planung, Montage, Service und Monitoring unter ein Dach.</p>
+                    </div>
+                </div>
+                <div class="values-grid">
+                    <div class="card">
+                        <h3>Ganzheitliche Beratung</h3>
+                        <p>Wir beginnen jedes Projekt mit einer transparenten Bestandsaufnahme. Wärmepumpe, Hybridlösung oder effiziente Modernisierung? Wir zeigen Chancen, Kosten und Fördermöglichkeiten auf – verständlich und verbindlich.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Digitale Projektsteuerung</h3>
+                        <p>Terminabstimmung, Dokumentation und Wartungspläne laufen bei uns digital zusammen. Kund:innen behalten alle Meilensteine über ein persönliches Kundenportal im Blick.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Verlässliches Handwerk</h3>
+                        <p>Unser Team aus zertifizierten Anlagenmechaniker:innen garantiert saubere Ausführung und langfristige Betriebssicherheit – abgestützt durch ein engmaschiges Servicenetz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story">
+            <div class="wrapper">
+                <div class="section-heading">
+                    <div>
+                        <h2>Wie alles begann</h2>
+                        <p>Vom klassischen Heizungsbauer zum innovativen Energiepartner: Die Reise der Neue Heizung GmbH ist geprägt von Leidenschaft für Technik, regionaler Verbundenheit und mutigen Entscheidungen.</p>
+                    </div>
+                </div>
+                <div class="grid-two story">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80" alt="Techniker der Neue Heizung GmbH bei der Arbeit">
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-entry">
+                            <span>2012</span>
+                            <h4>Gründung in Großenhain</h4>
+                            <p>Mit einem kleinen Kernteam starteten wir als regionaler Heizungs- und Sanitärbetrieb. Der Anspruch: hochwertige Heiztechnik und ehrliche Beratung, persönlich vor Ort.</p>
+                        </div>
+                        <div class="timeline-entry">
+                            <span>2016</span>
+                            <h4>Erste Wärmepumpen-Offensive</h4>
+                            <p>Als einer der ersten Betriebe in der Region etablierten wir ein spezialisiertes Wärmepumpenteam, das bis heute über 400 Systeme installiert hat.</p>
+                        </div>
+                        <div class="timeline-entry">
+                            <span>2020</span>
+                            <h4>Digitale Serviceplattform</h4>
+                            <p>Mit dem Launch unseres Kundenportals digitalisierten wir Wartung, Monitoring und Service-Tickets. Das verkürzt Reaktionszeiten und erhöht die Transparenz.</p>
+                        </div>
+                        <div class="timeline-entry">
+                            <span>Heute</span>
+                            <h4>Full-Service Energielösungen</h4>
+                            <p>Ob Wärmepumpe, Fernwärme-Übergabestation oder intelligente Hybridanlage – wir verbinden nachhaltige Technik mit passgenauer Förderung und langfristiger Begleitung.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="leistungen">
+            <div class="wrapper">
+                <div class="section-heading">
+                    <div>
+                        <h2>Unser Leistungsspektrum</h2>
+                        <p>Wir liefern Heiztechnik als kompletten Lebenszyklus – von der ersten Idee bis zum proaktiven Service. Effizient, nachhaltig und genau auf Ihr Gebäude zugeschnitten.</p>
+                    </div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Planung &amp; Energieberatung</h3>
+                        <p>Wärmebedarfsanalysen, hydraulischer Abgleich und Fördermittelstrategien für Wohn- und Gewerbeprojekte.</p>
+                        <div class="pill-group">
+                            <div class="pill">GEG-konform</div>
+                            <div class="pill">Fördermittel</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Installation &amp; Modernisierung</h3>
+                        <p>Wärmepumpen, Gas-Brennwert, Solarthermie, Fernwärme – fachgerecht verbaut, dokumentiert und geprüft.</p>
+                        <div class="pill-group">
+                            <div class="pill">Wärmepumpen</div>
+                            <div class="pill">Hybridlösungen</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Service &amp; Monitoring</h3>
+                        <p>Wartungsverträge, 24/7-Störungsdienst und smarte Sensorik für maximale Betriebssicherheit.</p>
+                        <div class="pill-group">
+                            <div class="pill">Serviceportal</div>
+                            <div class="pill">Fernwartung</div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Projektmanagement für Bauträger</h3>
+                        <p>Skalierbare Lösungen für Mehrfamilienhäuser, Quartiere und Gewerbeimmobilien inklusive BIM-Dokumentation.</p>
+                        <div class="pill-group">
+                            <div class="pill">BIM</div>
+                            <div class="pill">Quartierskonzepte</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="werte">
+            <div class="wrapper">
+                <div class="section-heading">
+                    <div>
+                        <h2>Was uns antreibt</h2>
+                        <p>Wir verbinden Verantwortung gegenüber unserer Region mit dem Anspruch, nachhaltige Energielösungen aktiv zu gestalten. Diese Prinzipien prägen jedes Projekt.</p>
+                    </div>
+                </div>
+                <div class="grid-two">
+                    <div class="card">
+                        <h3>Unser Qualitätsversprechen</h3>
+                        <ul class="list">
+                            <li><span></span><div>Meisterbetrieb mit SHK-Zertifizierung und eigenem Prüflabor für hydraulische Abgleiche.</div></li>
+                            <li><span></span><div>Partnerschaften mit führenden Herstellern wie Viessmann, Vaillant und NIBE.</div></li>
+                            <li><span></span><div>Service-Level-Agreements mit garantierten Reaktionszeiten und transparenten Wartungsberichten.</div></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Nachhaltigkeit &amp; Verantwortung</h3>
+                        <ul class="list">
+                            <li><span></span><div>Alle Einsätze werden CO₂-kompensiert – gemeinsam mit regionalen Aufforstungsinitiativen.</div></li>
+                            <li><span></span><div>Recycling von Altanlagen und fachgerechte Entsorgung von Kältemitteln nach F-Gase-Verordnung.</div></li>
+                            <li><span></span><div>Ausbildungsquote von 15 % und kontinuierliche Weiterbildungen im eigenen Schulungszentrum.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team">
+            <div class="wrapper">
+                <div class="section-heading">
+                    <div>
+                        <h2>Menschen mit Wärme im Herzen</h2>
+                        <p>Unser Team aus Ingenieur:innen, Meister:innen und Serviceprofis bringt unterschiedlichste Kompetenzen zusammen. Was uns eint: die Leidenschaft für Zukunftstechnologien und Kundennähe.</p>
+                    </div>
+                </div>
+                <div class="values-grid">
+                    <div class="card">
+                        <h3>Sebastian Heinze</h3>
+                        <p>Geschäftsführer und Heizungsbaumeister mit Fokus auf nachhaltige Wärmekonzepte und Digitalisierung im Handwerk.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Projektbüro</h3>
+                        <p>Unser Projektteam koordiniert Gewerke, erstellt Terminpläne und sorgt für eine reibungslose Kommunikation mit Behörden und Förderstellen.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Service &amp; Montage</h3>
+                        <p>Mehr als 20 Anlagenmechaniker:innen SHK kümmern sich um präzise Installationen, Wartungen und schnelle Hilfe im Störungsfall.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt">
+            <div class="wrapper">
+                <div class="cta-panel">
+                    <div>
+                        <h3>Bereit für Ihr nächstes Heizprojekt?</h3>
+                        <p>Ob Modernisierung oder Neubau – unser Team begleitet Sie von der ersten Analyse bis zum laufenden Betrieb. Vereinbaren Sie ein unverbindliches Erstgespräch.</p>
+                        <div class="pill-group" style="margin-top:1.5rem;">
+                            <div class="pill">Siedlungsweg 14 · 01558 Großenhain</div>
+                            <div class="pill">+49 3522 527 98 10</div>
+                            <div class="pill">info@neue-heizung.com</div>
+                        </div>
+                    </div>
+                    <form>
+                        <div>
+                            <label for="service">Interessiert an</label>
+                            <select id="service" name="service">
+                                <option value="waermepumpe">Wärmepumpen-Lösung</option>
+                                <option value="modernisierung">Modernisierung bestehender Anlage</option>
+                                <option value="gewerbe">Gewerbliche Heizlösung</option>
+                                <option value="service">Service/Wartungsvertrag</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="name">Ihr Name</label>
+                            <input type="text" id="name" name="name" placeholder="Vor- und Nachname">
+                        </div>
+                        <div>
+                            <label for="email">E-Mail-Adresse</label>
+                            <input type="email" id="email" name="email" placeholder="beispiel@domain.de">
+                        </div>
+                        <div>
+                            <label for="message">Projektbeschreibung</label>
+                            <textarea id="message" name="message" placeholder="Wie können wir helfen?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Beratung anfragen</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrapper footer-grid">
+            <div>
+                <a class="logo" href="#" style="color:#fff; text-decoration:none;">
+                    <span>NH</span>
+                    Neue Heizung GmbH
+                </a>
+                <p>Ihr Partner für effiziente Heiztechnik, nachhaltige Energie und persönlichen Service in Großenhain, Dresden und Umgebung.</p>
+            </div>
+            <div>
+                <h4>Schnellzugriff</h4>
+                <ul class="list">
+                    <li><span></span><a href="#mission">Mission &amp; Werte</a></li>
+                    <li><span></span><a href="#leistungen">Leistungen</a></li>
+                    <li><span></span><a href="#team">Team</a></li>
+                    <li><span></span><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Servicezeiten</h4>
+                <p>Montag – Freitag: 07:00 – 18:00 Uhr<br>24/7 Notdienst für Bestandskunden</p>
+            </div>
+            <div>
+                <h4>Rechtliches</h4>
+                <ul class="list">
+                    <li><span></span><a href="#">Impressum</a></li>
+                    <li><span></span><a href="#">Datenschutz</a></li>
+                    <li><span></span><a href="#">AGB</a></li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top:2rem; text-align:center; font-size:0.85rem; color:rgba(255,255,255,0.55);">
+            &copy; <script>document.write(new Date().getFullYear());</script> Neue Heizung GmbH. Alle Rechte vorbehalten.
+        </div>
+    </footer>
+</body>
+</html>
