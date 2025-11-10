@@ -9,15 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --color-primary: #d85c27;
-            --color-primary-dark: #b3471c;
-            --color-secondary: #0f172a;
-            --color-accent: #f3f4f6;
+            --color-primary: #1dd75f;
+            --color-primary-dark: #0fa152;
+            --color-secondary: #0b1220;
+            --color-accent: #f1f5f9;
             --color-background: #ffffff;
-            --color-text: #1f2937;
-            --color-muted: #64748b;
-            --radius-base: 12px;
-            --shadow-soft: 0 14px 40px rgba(15, 23, 42, 0.08);
+            --color-text: #0f172a;
+            --color-muted: #475569;
+            --radius-base: 14px;
+            --shadow-soft: 0 24px 50px rgba(15, 23, 42, 0.12);
         }
 
         * {
@@ -33,7 +33,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, rgba(216, 92, 39, 0.95), rgba(15, 23, 42, 0.95));
+            background: linear-gradient(135deg, rgba(11, 18, 32, 0.98), rgba(29, 215, 95, 0.88));
             color: #fff;
         }
 
@@ -87,9 +87,11 @@
         .hero {
             display: grid;
             gap: 2.5rem;
-            padding: 4rem 0 5rem;
+            padding: 4rem 2rem 5rem;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             align-items: center;
+            background: linear-gradient(135deg, rgba(29, 215, 95, 0.15), rgba(15, 117, 255, 0.12));
+            border-radius: calc(var(--radius-base) * 1.2);
         }
 
         .hero h1 {
@@ -152,7 +154,7 @@
         }
 
         .metric {
-            background: rgba(15, 23, 42, 0.4);
+            background: rgba(11, 18, 32, 0.45);
             padding: 1.5rem;
             border-radius: var(--radius-base);
             display: flex;
@@ -198,6 +200,30 @@
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         }
 
+        .team-grid {
+            display: grid;
+            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        }
+
+        .team-card {
+            background: var(--color-background);
+            border-radius: var(--radius-base);
+            padding: 2.2rem;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+        }
+
+        .team-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .team-card p {
+            margin: 0;
+            color: var(--color-muted);
+        }
+
         .card {
             background: var(--color-background);
             border-radius: var(--radius-base);
@@ -237,7 +263,7 @@
         .timeline {
             position: relative;
             padding-left: 1.5rem;
-            border-left: 2px solid rgba(15, 23, 42, 0.1);
+            border-left: 2px solid rgba(15, 23, 42, 0.12);
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
@@ -250,7 +276,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(180deg, rgba(216, 92, 39, 0.2), rgba(15, 23, 42, 0));
+            background: linear-gradient(180deg, rgba(29, 215, 95, 0.4), rgba(15, 23, 42, 0));
         }
 
         .timeline-entry {
@@ -267,7 +293,7 @@
             height: 12px;
             border-radius: 50%;
             background: var(--color-primary);
-            box-shadow: 0 0 0 6px rgba(216, 92, 39, 0.12);
+            box-shadow: 0 0 0 6px rgba(29, 215, 95, 0.18);
         }
 
         .timeline-entry h4 {
@@ -316,17 +342,35 @@
             margin-top: 1rem;
         }
 
+        .pill-group.contact-info {
+            margin-top: 1.5rem;
+        }
+
         .pill {
             padding: 0.45rem 1rem;
             border-radius: 999px;
-            background: rgba(216, 92, 39, 0.12);
+            background: rgba(29, 215, 95, 0.14);
             color: var(--color-primary);
             font-weight: 500;
             font-size: 0.9rem;
         }
 
+        .pill-contrast {
+            background: rgba(255, 255, 255, 0.18);
+            color: #fff;
+        }
+
+        .pill-contrast a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .pill-contrast a:hover {
+            text-decoration: underline;
+        }
+
         .cta-panel {
-            background: linear-gradient(120deg, rgba(15, 23, 42, 0.95), rgba(216, 92, 39, 0.92));
+            background: linear-gradient(120deg, rgba(11, 18, 32, 0.95), rgba(15, 117, 255, 0.85));
             border-radius: calc(var(--radius-base) * 1.2);
             padding: clamp(2.5rem, 4vw, 3.5rem);
             color: #fff;
@@ -368,7 +412,7 @@
 
         input:focus, textarea:focus, select:focus {
             border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(216, 92, 39, 0.2);
+            box-shadow: 0 0 0 3px rgba(29, 215, 95, 0.2);
             outline: none;
         }
 
@@ -409,7 +453,7 @@
             gap: 0.4rem;
             padding: 0.35rem 0.85rem;
             border-radius: 999px;
-            background: rgba(216, 92, 39, 0.16);
+            background: rgba(29, 215, 95, 0.16);
             color: var(--color-primary);
             font-weight: 600;
             font-size: 0.8rem;
@@ -465,7 +509,7 @@
     <header>
         <div class="wrapper">
             <nav>
-                <a class="logo" href="#">
+                <a class="logo" href="https://shop.neue-heizung.com">
                     <span>NH</span>
                     Neue Heizung GmbH
                 </a>
@@ -652,19 +696,19 @@
                         <p>Unser Team aus Ingenieur:innen, Meister:innen und Serviceprofis bringt unterschiedlichste Kompetenzen zusammen. Was uns eint: die Leidenschaft für Zukunftstechnologien und Kundennähe.</p>
                     </div>
                 </div>
-                <div class="values-grid">
-                    <div class="card">
+                <div class="team-grid">
+                    <article class="team-card">
                         <h3>Sebastian Heinze</h3>
-                        <p>Geschäftsführer und Heizungsbaumeister mit Fokus auf nachhaltige Wärmekonzepte und Digitalisierung im Handwerk.</p>
-                    </div>
-                    <div class="card">
+                        <p>Geschäftsführer und Heizungsbaumeister mit Fokus auf nachhaltige Wärmekonzepte, Förderberatung und Digitalisierung im Handwerk.</p>
+                    </article>
+                    <article class="team-card">
                         <h3>Projektbüro</h3>
                         <p>Unser Projektteam koordiniert Gewerke, erstellt Terminpläne und sorgt für eine reibungslose Kommunikation mit Behörden und Förderstellen.</p>
-                    </div>
-                    <div class="card">
+                    </article>
+                    <article class="team-card">
                         <h3>Service &amp; Montage</h3>
-                        <p>Mehr als 20 Anlagenmechaniker:innen SHK kümmern sich um präzise Installationen, Wartungen und schnelle Hilfe im Störungsfall.</p>
-                    </div>
+                        <p>Mehr als 20 Anlagenmechaniker:innen SHK kümmern sich um präzise Installationen, Wartungen und schnelle Hilfe im Störungsfall – 365 Tage im Jahr.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -675,10 +719,10 @@
                     <div>
                         <h3>Bereit für Ihr nächstes Heizprojekt?</h3>
                         <p>Ob Modernisierung oder Neubau – unser Team begleitet Sie von der ersten Analyse bis zum laufenden Betrieb. Vereinbaren Sie ein unverbindliches Erstgespräch.</p>
-                        <div class="pill-group" style="margin-top:1.5rem;">
-                            <div class="pill">Siedlungsweg 14 · 01558 Großenhain</div>
-                            <div class="pill">+49 3522 527 98 10</div>
-                            <div class="pill">info@neue-heizung.com</div>
+                        <div class="pill-group contact-info">
+                            <div class="pill pill-contrast">Siedlungsweg 14 · 01558 Großenhain</div>
+                            <div class="pill pill-contrast"><a href="tel:+4935225079810">+49 3522 527 98 10</a></div>
+                            <div class="pill pill-contrast"><a href="mailto:info@neue-heizung.com">info@neue-heizung.com</a></div>
                         </div>
                     </div>
                     <form>
@@ -713,7 +757,7 @@
     <footer>
         <div class="wrapper footer-grid">
             <div>
-                <a class="logo" href="#" style="color:#fff; text-decoration:none;">
+                <a class="logo" href="https://neue-heizung.com" style="color:#fff; text-decoration:none;">
                     <span>NH</span>
                     Neue Heizung GmbH
                 </a>
@@ -735,15 +779,18 @@
             <div>
                 <h4>Rechtliches</h4>
                 <ul class="list">
-                    <li><span></span><a href="#">Impressum</a></li>
-                    <li><span></span><a href="#">Datenschutz</a></li>
-                    <li><span></span><a href="#">AGB</a></li>
+                    <li><span></span><a href="https://neue-heizung.com/impressum" target="_blank" rel="noopener">Impressum</a></li>
+                    <li><span></span><a href="https://neue-heizung.com/datenschutz" target="_blank" rel="noopener">Datenschutz</a></li>
+                    <li><span></span><a href="https://shop.neue-heizung.com/policies/terms-of-service" target="_blank" rel="noopener">AGB</a></li>
                 </ul>
             </div>
         </div>
         <div style="margin-top:2rem; text-align:center; font-size:0.85rem; color:rgba(255,255,255,0.55);">
-            &copy; <script>document.write(new Date().getFullYear());</script> Neue Heizung GmbH. Alle Rechte vorbehalten.
+            &copy; <span id="current-year"></span> Neue Heizung GmbH. Alle Rechte vorbehalten.
         </div>
     </footer>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
